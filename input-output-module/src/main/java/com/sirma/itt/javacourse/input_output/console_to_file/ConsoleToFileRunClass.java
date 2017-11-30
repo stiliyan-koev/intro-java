@@ -30,7 +30,8 @@ public class ConsoleToFileRunClass {
 	 */
 	public static void main(String[] args) {
 		File directory = new File("target/consoleToFile");
-		String fileName = ConsoleToFile.validateFileName(ConsoleReader.read());
+		ConsoleToFile consoleToFile = new ConsoleToFile();
+		String fileName = consoleToFile.validateFileName(ConsoleReader.read());
 		DataOutputStream out = null;
 		directory.mkdirs();
 		try {
