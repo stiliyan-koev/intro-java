@@ -14,6 +14,7 @@ public class ReverseTextFileRunClass {
 	 *            - String arguments.
 	 */
 	public static void main(String[] args) {
-		ReverseTextFile.performReadReverseAndWrite();
+		ReverseTextFile reverseTextFile = new ReverseTextFile();
+		reverseTextFile.performReadReverseAndWrite();
 	}
 }
