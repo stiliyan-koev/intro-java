@@ -25,7 +25,7 @@ public class ConsoleToFile {
 	 * @return - Returns the user input, without the last '.', as a
 	 *         StringBuilder.
 	 */
-	public static StringBuilder userConsoleInputToString() {
+	public StringBuilder userConsoleInputToString() {
 		StringBuilder input = new StringBuilder();
 		LOGGER.info("Type in your text: " + System.lineSeparator());
 		String line = SC.nextLine();
@@ -48,7 +48,7 @@ public class ConsoleToFile {
 	 *            validated.
 	 * @return - The verified file name.
 	 */
-	public static String validateFileName(String fileName) {
+	public String validateFileName(String fileName) {
 		while (RegexUtilites.validateFileName(fileName) == false) {
 			LOGGER.info("Wrong file name ! It could contain letters, numbers, space and _ . Please type it again: ");
 			fileName = ConsoleReader.read();
