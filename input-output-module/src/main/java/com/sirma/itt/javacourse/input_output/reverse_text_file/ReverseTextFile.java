@@ -25,7 +25,7 @@ public class ReverseTextFile {
 	 * @throws IOException
 	 *             - Input/output exception may occur.
 	 */
-	public static void performReadReverseAndWrite() {
+	public void performReadReverseAndWrite() {
 		LOGGER.info("Type in the name of input file: ");
 		String inputFileName = getFileName();
 
@@ -47,7 +47,7 @@ public class ReverseTextFile {
 	 * 
 	 * @return - Validated name of a file as a String.
 	 */
-	public static String getFileName() {
+	public String getFileName() {
 		return ConsoleToFile.validateFileName(ConsoleReader.read());
 	}
 
@@ -61,7 +61,7 @@ public class ReverseTextFile {
 	 * @throws IOException
 	 *             - Input/Output exception may occur.
 	 */
-	public static StringBuilder readInputFromFile(BufferedReader input) {
+	public StringBuilder readInputFromFile(BufferedReader input) {
 		StringBuilder wholeInput = new StringBuilder();
 		try {
 			String line = input.readLine();
