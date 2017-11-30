@@ -8,6 +8,8 @@ public class DirectoryBrowserRunClass {
 	 *            - String arguments.
 	 */
 	public static void main(String[] args) {
-		DirectoryBrowser.listContent(DirectoryBrowser.getUserDirectory());
+		DirectoryBrowser directoryBrowser = new DirectoryBrowser();
+		String directory = directoryBrowser.getUserDirectory();
+		directoryBrowser.listContent(directory);
 	}
 }
