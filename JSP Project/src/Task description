@@ -1,0 +1,11 @@
+Create a simple CRUD (Create Read Update Delete) User Management Web Application using JSP, Servlet and MySQL/PostgreSQL that runs on a Tomcat server.
+The fields that have to be filled are:
+•	First Name
+•	Last Name
+•	Date of Birth
+•	Phone Number
+•	E-mail Address
+The user should be able to 
+search within the results and also 
+to be able
+to sort them by Last Name and Date of Birth.
