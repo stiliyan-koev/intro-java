@@ -32,7 +32,7 @@ public class DirectoryBrowser {
 	 * @param path
 	 *            - Path entered by the user, represented as String.
 	 */
-	public static void listContent(String path) {
+	public void listContent(String path) {
 		File directoryToAccess = new File(path);
 		if (isFile(directoryToAccess)) {
 			LOGGER.info("The path u entered is pointing a file !");
@@ -59,7 +59,7 @@ public class DirectoryBrowser {
 	 *            - The path entered by the user.
 	 * @return - True - for file; False - for directory.
 	 */
-	public static boolean isFile(File pointingPath) {
+	public boolean isFile(File pointingPath) {
 		if (pointingPath.exists() && pointingPath.isFile()) {
 			return true;
 		} else {
@@ -72,7 +72,7 @@ public class DirectoryBrowser {
 	 * 
 	 * @return - String representing the path.
 	 */
-	public static String getUserDirectory() {
+	public String getUserDirectory() {
 		LOGGER.info("Type in the full or short path of your directory: ");
 		return ConsoleReader.read();
 	}
