@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

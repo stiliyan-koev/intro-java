@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

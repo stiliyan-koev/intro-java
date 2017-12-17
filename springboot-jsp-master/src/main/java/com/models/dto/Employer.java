@@ -1,4 +1,4 @@
-package com.markovski.dto;
+package com.models.dto;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

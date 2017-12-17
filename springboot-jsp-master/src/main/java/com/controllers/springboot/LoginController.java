@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

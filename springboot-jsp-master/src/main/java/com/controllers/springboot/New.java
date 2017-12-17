@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 @RestController
-@ComponentScan("com.markovski.dto")
-@EnableJpaRepositories("com.markovski.dto")
+@ComponentScan("com.models.dto")
+@EnableJpaRepositories("com.models.dto")
 @EntityScan(basePackageClasses = Person.class)
 @RequestMapping("/personForm.htm")
 @SessionAttributes("person")

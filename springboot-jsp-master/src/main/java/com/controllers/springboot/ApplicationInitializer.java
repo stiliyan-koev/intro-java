@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

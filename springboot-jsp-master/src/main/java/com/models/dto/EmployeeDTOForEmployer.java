@@ -1,4 +1,4 @@
-package com.markovski.dto;
+package com.models.dto;
 
 public class EmployeeDTOForEmployer {
 

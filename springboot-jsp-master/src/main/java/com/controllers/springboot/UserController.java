@@ -1,4 +1,4 @@
-package com.markovski.springboot;
+package com.controllers.springboot;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,21 +28,21 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.markovski.dto.Employee;
-import com.markovski.dto.EmployeeDTOForEmployer;
-import com.markovski.dto.EmployeeRepository;
-import com.markovski.dto.Employer;
-import com.markovski.dto.EmployerRepository;
-import com.markovski.dto.Task;
-import com.markovski.dto.TaskRepository;
-import com.markovski.dto.Update;
-import com.markovski.dto.UpdateRepository;
-import com.markovski.dto.User;
-import com.markovski.dto.UserRepository;
+import com.models.dto.Employee;
+import com.models.dto.EmployeeDTOForEmployer;
+import com.models.dto.EmployeeRepository;
+import com.models.dto.Employer;
+import com.models.dto.EmployerRepository;
+import com.models.dto.Task;
+import com.models.dto.TaskRepository;
+import com.models.dto.Update;
+import com.models.dto.UpdateRepository;
+import com.models.dto.User;
+import com.models.dto.UserRepository;
 
 @RestController
-@ComponentScan("com.markovski.dto")
-@EnableJpaRepositories("com.markovski.dto")
+@ComponentScan("com.models.dto")
+@EnableJpaRepositories("com.models.dto")
 @EntityScan(basePackageClasses = User.class)
 @SessionAttributes("person")
 public class UserController {
