@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Employer {
 
 	private int id;
-	private User user;
 
 	@NotNull
 	String firstName;
@@ -44,8 +43,11 @@ public class Employer {
 	int bonus;
 	@NotNull
 	int comission;
+
 	@JsonBackReference
 	private List<Employee> employees;
+
+	private User user;
 
 	public Employer(String firstName, String midName, String familyName, int departmentId, String phone, Date hireDate,
 			boolean gender, Date birthDate, int salary, int comission, int bonus) {

@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "update")
 public class Update {
@@ -24,6 +26,7 @@ public class Update {
 	@NotNull
 	String message;
 
+	@JsonManagedReference
 	private Task taskRefference;
 
 	@Id

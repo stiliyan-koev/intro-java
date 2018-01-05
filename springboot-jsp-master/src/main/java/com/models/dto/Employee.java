@@ -25,7 +25,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Employee {
 
 	int id;
-	private User user;
 
 	@NotNull
 	String firstName;
@@ -59,7 +58,9 @@ public class Employee {
 	boolean active;
 	@JsonManagedReference
 	private Employer employerRefference;
+	@JsonIgnore
 	private Task taskRefference;
+	private User user;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

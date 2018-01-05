@@ -11,7 +11,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -44,6 +47,7 @@ import com.models.dto.UserRepository;
 @ComponentScan("com.models.dto")
 @EnableJpaRepositories("com.models.dto")
 @EntityScan(basePackageClasses = User.class)
+@EnableSpringDataWebSupport
 @SessionAttributes("person")
 public class UserController {
 	@Autowired
@@ -72,7 +76,7 @@ public class UserController {
 		return list;
 	}
 
-	@RequestMapping("/insertRecords")
+	@RequestMapping(value = "/insertRecords", method = RequestMethod.POST)
 	public void insertRecords() throws ParseException {
 		String dateOne = "10/10/1980";
 		Date dateeOne = new SimpleDateFormat("dd/MM/yyyy").parse(dateOne);
@@ -129,7 +133,7 @@ public class UserController {
 		taskRepository.save(devTask);
 		taskRepository.save(qaTask);
 
-		// updateRepository.save(update);
+		updateRepository.save(update);
 
 	}
 
@@ -242,5 +246,31 @@ public class UserController {
 	@RequestMapping(value = "/recs", method = RequestMethod.GET)
 	public List<User> listAllUsers() {
 		return userRepository.findAll();
+	}
+
+	@RequestMapping(value = "/listEmployees", method = RequestMethod.GET)
+	public List<Employee> listAllEmployees() {
+		return employeeRepository.findAll();
+	}
+
+	@RequestMapping(value = "/listEmployers", method = RequestMethod.GET)
+	public List<Employer> listAllEmployers() {
+		return employerRepository.findAll();
+	}
+
+	@RequestMapping(value = "/listTasks", method = RequestMethod.GET)
+	public List<Task> listAllTasks() {
+		return taskRepository.findAll();
+	}
+
+	@RequestMapping(value = "/listUpdates", method = RequestMethod.GET)
+	public List<Update> listAllUpdates() {
+		return updateRepository.findAll();
+	}
+
+	// @EnableSpringDataWebSupport
+	@RequestMapping(value = "/asd", method = RequestMethod.GET)
+	public Page<Employer> asd(Pageable pageReq) {
+		return employerRepository.findEmployerIdByUserId(1, pageReq);
 	}
 }

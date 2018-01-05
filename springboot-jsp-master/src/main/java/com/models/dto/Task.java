@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "task")
 public class Task {
@@ -27,6 +29,8 @@ public class Task {
 	String assignees;
 
 	private Employee employee;
+
+	@JsonBackReference
 	private List<Update> updates;
 
 	public Task() {
